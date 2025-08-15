@@ -7,21 +7,21 @@
  */
 function convertToObject(sourceString) {
   // write your code here
-  const result = {};
+  const stylesObject = {};
 
   sourceString
     .split(';')
-    .map((line) => line.trim())
-    .filter((line) => line)
-    .forEach((line) => {
-      const [prop, value] = line.split(':');
+    .map((declaration) => declaration.trim())
+    .filter((declaration) => declaration)
+    .forEach((declaration) => {
+      const [property, value] = declaration.split(':');
 
-      if (prop && value) {
-        result[prop.trim()] = value.trim();
+      if (property && value) {
+        stylesObject[property.trim()] = value.trim();
       }
     });
 
-  return result;
+  return stylesObject;
 }
 
 module.exports = convertToObject;
