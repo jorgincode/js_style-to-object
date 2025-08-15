@@ -7,7 +7,7 @@
  */
 function convertToObject(sourceString) {
   // write your code here
-  const cssProperties = {};
+  const propertyValues = {};
 
   sourceString
     .split(';')
@@ -20,11 +20,11 @@ function convertToObject(sourceString) {
         const property = declaration.substring(0, colonIndex).trim();
         const value = declaration.substring(colonIndex + 1).trim();
 
-        cssProperties[property] = value;
+        propertyValues[property] = value;
       }
     });
 
-  return cssProperties;
+  return propertyValues;
 }
 
 module.exports = convertToObject;
